@@ -1,0 +1,575 @@
+import { Icons } from "@/components/icons";
+import { HomeIcon, NotebookIcon } from "lucide-react";
+
+interface ResumeData {
+  name: string;
+  initials: string;
+  url: string;
+  location: string;
+  locationLink: string;
+  description: string;
+  summary: string;
+  avatarUrl: string;
+  skills: string[];
+  navbar: { href: string; icon: any; label: string }[];
+  contact: {
+    email: string;
+    tel: string;
+    social: {
+      GitHub: { name: string; url: string; icon: any; navbar: boolean };
+      LinkedIn: { name: string; url: string; icon: any; navbar: boolean };
+      Youtube?: { name: string; url: string; icon: any; navbar: boolean };
+      email: { name: string; url: string; icon: any; navbar: boolean };
+    };
+  };
+  work: {
+    company: string;
+    href: string;
+    badges: any[];
+    location: string;
+    title: string;
+    logoUrl: string;
+    start: string;
+    end: string;
+    showDropdownIcon: boolean;
+    description: JSX.Element;
+  }[];
+  education: {
+    school: string;
+    href: string;
+    degree: string;
+    logoUrl: string;
+    start: string;
+    end: string;
+  }[];
+  projects?: {
+    title: string;
+    href: string;
+    dates: string;
+    active: boolean;
+    description: string;
+    technologies: string[];
+    links: { type: string; href: string; icon: JSX.Element }[];
+    image: string;
+    video: string;
+  }[];
+  blogs: {
+    title: string;
+    dates: string;
+    description: string;
+    image: string;
+    links: { title: string; href: string; icon: JSX.Element }[];
+  }[];
+  hackathons?: {
+    title: string;
+    dates: string;
+    location: string;
+    description: string;
+    image: string;
+    links: { title: string; icon: JSX.Element; href: string }[];
+  }[];
+}
+
+export const DATA: ResumeData = {
+  name: "Saeed Ahmed",
+  initials: "SA",
+  url: "https://theesaeedahmed.com",
+  location: "Kolkata, West Bengal, India",
+  locationLink: "https://maps.app.goo.gl/sbVX5aL9g7dbCMzy6",
+  description:
+    "Cracked Software and Generative AI Engineer. I love building cool working stuff and helping people.",
+  summary:
+    "I am a final year undergraduate student at Heritage Institute of Technology with experience of about 2 years working in Full Time roles and Part-time gigs, looking for opportunities in the field of Software Engineering and Generative AI.",
+  avatarUrl: "/me.png",
+  skills: [
+    "C",
+    "C++",
+    "Python",
+    "React.js",
+    "Next.js",
+    "JavaScript",
+    "Typescript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "Redis",
+    "Postgres",
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "AWS",
+    "LLMs",
+    "Git",
+  ],
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+  ],
+  contact: {
+    email: "theesaeedahmed@gmail.com",
+    tel: "+918100262733",
+    social: {
+      GitHub: {
+        name: "GitHub",
+        url: "https://github.com/theesaeedahmed",
+        icon: Icons.github,
+        navbar: true,
+      },
+      LinkedIn: {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/theesaeedahmed/",
+        icon: Icons.linkedin,
+        navbar: true,
+      },
+      // Youtube: {
+      //   name: "Youtube",
+      //   url: "https://www.youtube.com/@theesaeedahmed",
+      //   icon: Icons.youtube,
+      //   navbar: true,
+      // },
+      email: {
+        name: "Send Email",
+        url: "mailto:theesaeedahmed@gmail.com",
+        icon: Icons.email,
+        navbar: false,
+      },
+    },
+  },
+
+  work: [
+    // {
+    //   company: "Trilogy Innovations (CodeNation)",
+    //   href: "https://trilogy.com/",
+    //   badges: [],
+    //   location: "Remote",
+    //   title: "Software Development Engineer Intern",
+    //   logoUrl: "/trilogy.png",
+    //   start: "December 2024",
+    //   end: "February 2025",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Engineered a unified deployment system enabling one-click subdomain
+    //         releases artifacts with live sandbox previews.
+    //       </li>
+    //       <li>
+    //         Implemented functionality to download AI-generated code in NextJS
+    //         file structure format and run hassle-free locally.
+    //       </li>
+    //       <li>
+    //         Architected Gemini AI integration in Social Savvy SDK for
+    //         multi-modal analysis to build brand image.
+    //       </li>
+    //       <li>
+    //         Incorporated Web Speech Synthesis API for voice chatbots, enabling
+    //         AI podcasts generation using voice commands.
+    //       </li>
+    //       <li>
+    //         Extended the UI for custom thumbnail generation for AI podcasts,
+    //         ensuring brand consistency and engaging visuals.
+    //       </li>
+    //       <li>
+    //         Utilized technologies and tools including NextJS, Python, AWS
+    //         Lambda, DynamoDB, AWS CloudWatch, Gitpod, Docker, Kubernetes (EKS,
+    //         ECS), Claude AI, OpenAI, Perplexity AI, Gemini AI, Eleven Labs, and
+    //         CI/CD pipelines.
+    //       </li>
+    //       <li>
+    //         Contributed in https://protosmith.ai/ and
+    //         https://social-savvy.ti.trilogy.com/
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Microsoft",
+    //   href: "https://microsoft.com",
+    //   badges: [],
+    //   location: "Hyderabad, India",
+    //   title: "Software Engineer Intern",
+    //   logoUrl: "/microsoft.png",
+    //   start: "May 2024",
+    //   end: "July 2024",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Improved data generation by 36.36% by creating C# parser using the
+    //         Roslyn, Semantic Models, and Syntax Trees.
+    //       </li>
+    //       <li>
+    //         Extended the scope of parser in 2 more languages, Python and
+    //         JavaScript using AST, and Esprima respectively.
+    //       </li>
+    //       <li>
+    //         Enhanced method-level namespace resolution by loading assemblies for
+    //         NuGet packages and default namespaces and building trie for class
+    //         libraries in 4 different configurations, achieving a 58% improvement
+    //         in resolution efficiency.
+    //       </li>
+    //       <li>
+    //         Generated CodeBERT embeddings of SPO.Core repository, used FAISS for
+    //         similarity search of embeddings and utilized them for code
+    //         generation in in-repository-context, attaining 81.29% accuracy while
+    //         testing on 100 samples.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Mercor",
+    //   href: "https://mercor.com",
+    //   badges: [],
+    //   location: "Remote",
+    //   title: "Interview Proctor",
+    //   logoUrl: "/mercor.jpeg",
+    //   start: "Mar 2024",
+    //   end: "Apr 2024",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Conducted 10+ interviews for software engineer role for the company,
+    //         and provided feedback to the candidates.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "FunctionUp",
+    //   href: "https://functionup.org",
+    //   badges: [],
+    //   location: "Remote",
+    //   title: "Teaching Assistant",
+    //   logoUrl: "/functionup.jpeg",
+    //   start: "May 2017",
+    //   end: "August 2017",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Mentored 100+ students in the field of software engineering, and
+    //         provided guidance on how to get started in the field.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Pinch",
+    //   badges: [],
+    //   href: "pinch-me.com",
+    //   location: "Remote",
+    //   title: "Software Engineering Intern",
+    //   logoUrl: "/pinch_me.jpeg",
+    //   start: "December 2022",
+    //   end: "January 2023",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Built the crypto trading app using React Native, enabling users to
+    //         learn, share and trade cryptocurrencies together.
+    //       </li>
+    //       <li>
+    //         Implemented the chat feature using Firebase Firestore, and
+    //         integrated the trading API using WebSockets.
+    //       </li>
+    //       <li>
+    //         Developed the user authentication system using Firebase Auth, and
+    //         integrated the trading API using WebSockets.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Actuary Life",
+    //   href: "https://actuarylife.com",
+    //   badges: [],
+    //   location: "Noida, India",
+    //   title: "Full Stack Developement Intern",
+    //   logoUrl: "/actuarylife.jpeg",
+    //   start: "May 2022",
+    //   end: "June 2022",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Created a full-stack Learning Management System using React JS, Node
+    //         JS, Express JS, and MySQL.
+    //       </li>
+    //       <li>
+    //         Engineered actuarial valuation models to compute the pricing and
+    //         reserving using Gradient Descent Algorithm.
+    //       </li>
+    //       <li>
+    //         Analyzed and rendered the data in frontend app using datatables and
+    //         the open-source JavaScript library ChartJS.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Pristine Escapes",
+    //   href: "https://pristineescapes.com",
+    //   badges: [],
+    //   location: "Bangalore, India",
+    //   title: "Frontend Developer Intern",
+    //   logoUrl: "/pristine_escapes.jpeg",
+    //   start: "October 2021",
+    //   end: "January 2022",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Made all 750+ pages on the website responsive by editing each page
+    //         in Elementor, a page builder for WordPress.
+    //       </li>
+    //       <li>
+    //         Developed a custom WordPress theme using PHP, HTML, CSS, and
+    //         JavaScript.
+    //       </li>
+    //       <li>
+    //         Designed 40+ brochures using a vector graphics editor, Figma, for
+    //         promoting different properties and locations.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+    // {
+    //   company: "Yunlin University of Science and Technology",
+    //   href: "https://yuntech.edu.tw",
+    //   badges: [],
+    //   location: "Taiwan",
+    //   title: "Research Intern",
+    //   logoUrl: "/lime.svg",
+    //   start: "October 2021",
+    //   end: "January 2022",
+    //   showDropdownIcon: true,
+    //   description: (
+    //     <ul className="list-disc space-y-2 pl-4 text-sm text-muted-foreground marker:text-primary">
+    //       <li>
+    //         Shifted platform from 1 canvas to 3 separate canvases, which
+    //         increased the visibility of the platform by 33.33%.
+    //       </li>
+    //       <li>
+    //         Developed a 3D graphing calculator using WebGL, Three.js, and
+    //         JavaScript.
+    //       </li>
+    //       <li>
+    //         Incorporated unit conversion, sliders, function for showing surfaces
+    //         and volumes, and 360 degrees of auto-rotation.
+    //       </li>
+    //     </ul>
+    //   ),
+    // },
+  ],
+  education: [
+    {
+      school: "Heritage Institute of Technology",
+      href: "https://www.heritageit.edu",
+      degree: "Bachelor's of Technology in Computer Science and Engineering",
+      logoUrl: "/hit.png",
+      start: "2021",
+      end: "2025",
+    },
+  ],
+
+  projects: [
+    // {
+    //   title: "Post",
+    //   href: "https://shivprime94.github.io/Post",
+    //   dates: "Jan 2024 - Feb 2024",
+    //   active: true,
+    //   description:
+    //     "Developed a social media platform for sharing thoughts.",
+    //   technologies: [
+    //     "React.js",
+    //     "Node.js",
+    //     "Express.js",
+    //     "MongoDB Atlas",
+    //     "Github Pages",
+    //     "Render",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://shivprime94.github.io/Post",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/shivprime94/Post",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/post-me.png",
+    //   video:"",
+    // },
+    // {
+    //   title: "Translate Text",
+    //   href: "https://github.com/shivprime94/TranslateText",
+    //   dates: "June 2023 - July 2023",
+    //   active: true,
+    //   description:
+    //     "Developed a text translation platform for translating text to 20+ languages and used Redis for caching",
+    //   technologies: [
+    //     "React.js",
+    //     "Node.js",
+    //     "Express.js",
+    //     "Redis"
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/shivprime94/TranslateText",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/translate-text.png",
+    //   video: "",
+    // },
+    // {
+    //   title: "Profile FYI",
+    //   href: "https://profile-fyi.netlify.app/",
+    //   dates: "August 2024 - August 2024",
+    //   active: true,
+    //   description:
+    //     "Developed a e-commerce platform with add to card, remove from cart, discount, quantity change and checkout functionality.",
+    //   technologies: [
+    //     "Next.js",
+    //     "TailwindCSS",
+    //     "Javascript",
+    //     "React.js",
+    //     "Github",
+    //     "Netlify"
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://profile-fyi.netlify.app/",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/shivprime94/profile-fyi",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/profile-fyi.png",
+    //   video: "",
+    // },
+    // {
+    //   title: "Crypto Coins",
+    //   href: "https://github.com/shivprime94/crypto-app",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Developed a web app to list all prices, their changes in real-time of cryptocurrencies using the coingecko API",
+    //   technologies: [
+    //     "React.js",
+    //     "JavaScript",
+    //     "API",
+    //     "Github Pages",
+    //     "Git",
+    //     "GitHub"
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://shivprime94.github.io/crypto-app",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Source",
+    //       href: "https://github.com/shivprime94/crypto-app",
+    //       icon: <Icons.github className="size-3" />,
+    //     }
+    //   ],
+    //   image: "/coin.png",
+    //   video:"",
+    // },
+  ],
+  blogs: [
+    // {
+    //   title: "Microsoft interview experience for SWE - Intern [Off-Campus]",
+    //   dates: "January 2024 - Jan 2024",
+    //   description:
+    //     "I applied through the career portal on July 17 and got the OA link with two questions. Both were leetcode easy-medium. I solved and submitted them within 20 minutes..",
+    //   image:
+    //     "https://cdn.hashnode.com/res/hashnode/image/upload/v1706329920629/fe27c816-23ad-4909-bc70-cd13d80f4bff.gif?w=1600&h=840&fit=crop&crop=entropy&auto=format,compress&gif-q=60&format=webm",
+    //   links: [
+    //     {
+    //       title: "Hashnode",
+    //       href: "https://shivshankarkanaujiya.hashnode.dev/my-microsoft-interview-experience-for-swe-intern-off-campus",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   title:
+    //     "Trilogy Innovations Interview Experience for SDE Intern [Off-Campus]",
+    //   dates: "January 2024 - Jan 2024",
+    //   description:
+    //     "I applied through a Google form circulated by a friend who sent it to me. The first round was an online assessment on Interviewbit. Received an email that I got..",
+    //   image:
+    //     "https://cdn.hashnode.com/res/hashnode/image/upload/v1705817059762/71f17533-8f39-4874-87d0-e751e573ec49.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    //   links: [
+    //     {
+    //       title: "Hashnode",
+    //       href: "https://shivshankarkanaujiya.hashnode.dev/trilogy-innovations-interview-experience-for-sde-intern-off-campus",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Deep Linking in React-Native",
+    //   dates: "January 2024 - Jan 2024",
+    //   description:
+    //     "In this blog, I will explain how to implement deep linking in react-native in two different ways. First, what is deep linking, and why do we need it in our app?..",
+    //   image:
+    //     "https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/gy08FXeM2L4/upload/e4caf5c23ba1f90dee82160f8a9cfb2a.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    //   links: [
+    //     {
+    //       title: "Hashnode",
+    //       href: "https://shivshankarkanaujiya.hashnode.dev/deep-linking-in-react-native",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "How to get internships (things you need to know)",
+    //   dates: "February 2024 - February 2024",
+    //   description:
+    //     "You can explore a few things - front-end development using some in-demand libraries/frameworks - react, flutter, etc. Most front-end applications, especially web ones, require Javascript, HTML, and CSS..",
+    //   image:
+    //     "https://cdn.hashnode.com/res/hashnode/image/upload/v1707309405559/64ddf4dd-7c92-4abc-83d9-d062303fc86d.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    //   links: [
+    //     {
+    //       title: "Hashnode",
+    //       href: "https://shivshankarkanaujiya.hashnode.dev/deep-linking-in-react-native",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
+  ],
+  hackathons: [
+    {
+      title: "Hack-Heritage Hackathon",
+      dates: "February 3rd - 4th, 2018",
+      location: "Kolkata, India",
+      description:
+        "Developed a web application that helps the common public to draft legal documents easily.",
+      image:
+        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/developer-week.jpg",
+      links: [
+        {
+          title: "Github",
+          icon: <Icons.github className="h-4 w-4" />,
+          href: "https://github.com/theesaeedahmed/hack-heritage",
+        },
+      ],
+    },
+  ],
+} as const;
