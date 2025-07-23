@@ -27,13 +27,13 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 3. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install --frozen-lockfile
    ```
 
 4. Start the local Server:
 
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 5. Open the [Config file](./src/data/resume.tsx) and make changes

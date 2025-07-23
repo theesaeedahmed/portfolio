@@ -104,7 +104,11 @@ export const DATA: ResumeData = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    {
+      href: "https://theesaeedahmed.medium.com",
+      icon: NotebookIcon,
+      label: "Medium - Blogs",
+    },
   ],
   contact: {
     email: "theesaeedahmed@gmail.com",
