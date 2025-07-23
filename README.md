@@ -6,7 +6,7 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 
 - Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
 - Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
+- Includes blogs
 - Responsive for different devices
 - Optimized for Next.js and Vercel
 
@@ -27,17 +27,17 @@ Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://
 3. Install dependencies:
 
    ```bash
-   pnpm install
+   npm install
    ```
 
 4. Start the local Server:
 
    ```bash
-   pnpm dev
+   npm run dev
    ```
 
 5. Open the [Config file](./src/data/resume.tsx) and make changes
 
 # License
 
-Licensed under the [MIT license](https://github.com/theesaeedahmed/portfolio/blob/main/LICENSE.md).
+Licensed under the [MIT license](https://github.com/theesaeedahmed/portfolio/blob/main/LICENSE).
